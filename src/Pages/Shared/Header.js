@@ -15,27 +15,27 @@ const Header = () => {
 
   const menuItems = (
     <>
-      <li>
+      <li className='text-balck hover:text-secondary hover:font-bold hover:border border-secondary rounded-lg'>
         <Link to={"/"}>Home</Link>
       </li>
-      <li>
+      <li className='text-balck hover:text-secondary hover:font-bold hover:border border-secondary rounded-lg'>
         <Link to={"/appointment"}>Order</Link>
       </li>
-      <li>
+      <li className='text-balck hover:text-secondary hover:font-bold hover:border border-secondary rounded-lg'>
         <Link to={"/reviews"}>Reviews</Link>
       </li>
-      <li>
+      <li className='text-balck hover:text-secondary hover:font-bold hover:border border-secondary rounded-lg'>
         <Link to={"/contact"}>Contact Us</Link>
       </li>
-      <li>
+      <li className='text-balck hover:text-secondary hover:font-bold hover:border border-secondary rounded-lg'>
         <Link to={"/about"}>About</Link>
-      </li>
+      </li >
       {
-        user && <li>
+        user && <li className='text-balck hover:text-secondary hover:font-bold hover:border border-secondary rounded-lg'>
         <Link to={"/dashboard"}>Dashboard</Link>
       </li>
       }
-      <li>
+      <li className='text-balck hover:text-secondary hover:font-bold hover:border border-secondary rounded-lg'>
         {user ? <button onClick={logout} className="btn btn-ghost">Sign Out</button> : <Link to={"/login"}>Login</Link>}
       </li>
     </>
