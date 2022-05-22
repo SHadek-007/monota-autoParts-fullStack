@@ -12,27 +12,27 @@ const Categories = () => {
             <h2 className='text-5xl text-center hover:text-secondary font-semibold'>Top Categories</h2>
             <p className='text-center text-xl mt-5 mb-9'>Get your car looking like new with our vast selection of Auto Parts and Car Accessories.</p>
             <div className='grid grid-cols-2 lg:grid-cols-6 mx-auto'>
-                <div className='mx-auto text-center shadow-lg p-2 rounded-xl'>
+                <div className='mx-auto text-center shadow-lg p-2 rounded-xl hover:border-2 border-secondary'>
                     <img src={img1} alt="" />
                     <p>Replica Wheels</p>
                 </div>
-                <div className='mx-auto text-center shadow-lg p-2 rounded-xl'>
+                <div className='mx-auto text-center shadow-lg p-2 rounded-xl hover:border-2 border-secondary'>
                     <img src={img2} alt="" />
                     <p>Break Disk</p>
                 </div>
-                <div className='mx-auto text-center shadow-lg p-2 rounded-xl'>
+                <div className='mx-auto text-center shadow-lg p-2 rounded-xl hover:border-2 border-secondary'>
                     <img src={img3} alt="" />
                     <p>Steel Rim</p>
                 </div>
-                <div className='mx-auto text-center shadow-lg p-2 rounded-xl'>
+                <div className='mx-auto text-center shadow-lg p-2 rounded-xl hover:border-2 border-secondary'>
                     <img src={img4} alt="" />
                     <p>Steam Engine</p>
                 </div>
-                <div className='mx-auto text-center shadow-lg p-2 rounded-xl'>
+                <div className='mx-auto text-center shadow-lg p-2 rounded-xl hover:border-2 border-secondary'>
                     <img src={img5} alt="" />
                     <p>Piston Rod</p>
                 </div>
-                <div className='mx-auto text-center shadow-lg p-2 rounded-xl'>
+                <div className='mx-auto text-center shadow-lg p-2 rounded-xl hover:border-2 border-secondary'>
                     <img src={img6} alt="" />
                     <p>Engine Piston</p>
                 </div>
