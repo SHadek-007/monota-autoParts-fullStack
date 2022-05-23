@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const PurchageDetails = () => {
@@ -8,11 +9,12 @@ const PurchageDetails = () => {
   const [productDetail, setProductDetail] = useState({});
   const [inputQuantity, setInputQuantity] = useState(0);
   const [user] = useAuthState(auth);
+
   useEffect(() => {
     fetch(`http://localhost:5000/product/${productId}`)
       .then((res) => res.json())
       .then((data) => setProductDetail(data));
-  }, []);
+  }, [productDetail]);
 
   const increaseProduct = () =>{
     const url = `http://localhost:5000/product/increase/${productDetail._id}`;
@@ -32,6 +34,7 @@ const PurchageDetails = () => {
       );
   };
 
+
   const decreaseProduct = () =>{
     const url = `http://localhost:5000/product/decrease/${productDetail._id}`;
     fetch(url, {
@@ -44,6 +47,31 @@ const PurchageDetails = () => {
                 mquantity: productDetail.mquantity - 1,
               });
       });
+  }
+
+  const handleOrder = (e) =>{
+    e.preventDefault();
+    const placeOrder = {
+      orderId: productDetail._id,
+      orderName: productDetail.name,
+      price:productDetail.price,
+      orderUser: user.email,
+      orderUserName: user.displayName,
+      quantity:e.target.quantity.value,
+      phone: e.target.phone.value,
+      address:e.target.address.value
+    }
+    fetch('http://localhost:5000/order',{
+      method:'POST',
+      headers:{
+        'content-type':'application/json'
+      },
+      body:JSON.stringify(placeOrder)
+    })
+    .then(res => res.json())
+    .then(data =>{
+      toast('Successfully Added Your Order')
+    })
   }
 
   return (
@@ -77,12 +105,13 @@ const PurchageDetails = () => {
             </div>
             <div className="mt-7 mx-auto">
             <h2 className="text-3xl font-semibold text-center mb-2">Place Your Order</h2>
-            <form className="grid grid-cols-1 justify-items-center">
-            <input type="text" disabled value={productDetail.name} class="mb-4 input input-bordered w-full max-w-xl" />
-            <input type="text" disabled value={user?.displayName || ""} class="mb-4 input input-bordered w-full max-w-xl" />
-            <input type="text" disabled value={user?.email || ""} class="mb-4 input input-bordered w-full max-w-xl" />
-            <input type="number" name="phone" placeholder="Your Phone" class="mb-4 input input-bordered w-full max-w-xl" />
-            <input type="text" name="address" placeholder="Your Address" class="mb-4 input input-bordered w-full max-w-xl" />
+            <form onSubmit={handleOrder} className="grid grid-cols-1 justify-items-center">
+            <input type="text" disabled value={productDetail.name} className="mb-4 input input-bordered w-full max-w-xl" />
+            <input type="number" name="quantity" placeholder="Order Quantity" className="mb-4 input input-bordered w-full max-w-xl" />
+            <input type="text" disabled value={user?.displayName || ""} className="mb-4 input input-bordered w-full max-w-xl" />
+            <input type="text" disabled value={user?.email || ""} className="mb-4 input input-bordered w-full max-w-xl" />
+            <input type="number" name="phone" placeholder="Your Phone" className="mb-4 input input-bordered w-full max-w-xl" />
+            <input type="text" name="address" placeholder="Your Address" className="mb-4 input input-bordered w-full max-w-xl" />
             <input
               type="submit"
               value="Submit"

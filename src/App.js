@@ -13,6 +13,8 @@ import PurchageDetails from './Pages/Purchage/PurchageDetails';
 import Footer from './Pages/Shared/Footer';
 import Header from './Pages/Shared/Header';
 import NotFound from './Pages/Shared/NotFound';
+import { ToastContainer } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -23,8 +25,8 @@ function App() {
         <Route path='/purchage/:productId' element={<RequireAuth><PurchageDetails></PurchageDetails></RequireAuth>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
-          <Route index element={<MyProfile></MyProfile>}></Route>
-          <Route path='order' element={<MyOrders></MyOrders>}></Route>
+          <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+          <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='review' element={<AddReview></AddReview>}></Route>
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
@@ -32,6 +34,7 @@ function App() {
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
