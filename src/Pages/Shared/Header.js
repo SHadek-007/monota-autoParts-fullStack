@@ -25,7 +25,7 @@ const Header = () => {
         <Link to={"/reviews"}>Reviews</Link>
       </li>
       <li className='text-balck hover:text-secondary hover:font-bold hover:border border-secondary rounded-lg'>
-        <Link to={"/contact"}>Contact Us</Link>
+        <Link to={"/blogs"}>Blogs</Link>
       </li>
       <li className='text-balck hover:text-secondary hover:font-bold hover:border border-secondary rounded-lg'>
         <Link to={"/about"}>About</Link>
