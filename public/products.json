@@ -1,56 +1,56 @@
 [
   {
     "_id": "6289510c724f65d6298adcae",
-    "price": "$3,944.31",
+    "price": 300,
     "img": "https://i.ibb.co/yV6w2M5/1-300x300.jpg",
-    "mquantity": 36,
-    "aquantity": 37,
-    "name": "Melba Copeland",
-    "des": "Reprehenderit cupidatat nulla labore pariatur velit nostrud pariatur non sint et."
+    "mquantity": 300,
+    "aquantity": 1000,
+    "name": "Brake Disc For Audi A3",
+    "des": "​It seems like yesterday that you were driving away from the dealership in your brand new Audi A3. A car that we are sure gives you great satisfaction. That much is clear from the miles you've driven since the first time you placed your hands on its steering wheel. So many that it is now time to replace the discs and pads so you can return the braking system to full efficiency."
   },
   {
     "_id": "6289510cb39a54ccba51690b",
-    "price": "$1,825.68",
+    "price": 700,
     "img": "https://i.ibb.co/Vmm0zQ1/2-300x300.jpg",
-    "mquantity": 40,
-    "aquantity": 24,
-    "name": "Zelma House",
+    "mquantity": 300,
+    "aquantity": 1000,
+    "name": "Glossy Aluminium Fan",
     "des": "Dolor et ullamco sint aliqua eu labore elit aliquip magna exercitation."
   },
   {
     "_id": "6289510c64c67a7faf36895d",
-    "price": "$2,095.07",
+    "price": 400,
     "img": "https://i.ibb.co/RpMfJN8/3-300x300.jpg",
-    "mquantity": 24,
-    "aquantity": 24,
-    "name": "Forbes Fuentes",
+    "mquantity": 300,
+    "aquantity": 1000,
+    "name": "Steering Wheel Latex",
     "des": "Non ullamco nulla nisi esse consectetur esse. Dolore sit nulla labore cillum officia"
   },
   {
     "_id": "6289510cfd0e46f05dc20254",
-    "price": "$2,213.70",
+    "price": 250,
     "img": "https://i.ibb.co/ZYfJ911/4-300x300.jpg",
-    "mquantity": 21,
-    "aquantity": 40,
-    "name": "Marla Barrera",
+    "mquantity": 300,
+    "aquantity": 1000,
+    "name": "Cocker Tire Strong",
     "des": "Minim Lorem ad officia ullamco esse exercitation commodo ipsum in incididunt ea."
   },
   {
     "_id": "6289510c759a76df1497e301",
-    "price": "$1,344.33",
+    "price": 2000,
     "img": "https://i.ibb.co/xJs0NKK/5-300x300.jpg",
-    "mquantity": 23,
-    "aquantity": 26,
-    "name": "Norman Clemons",
+    "mquantity": 300,
+    "aquantity": 1000,
+    "name": "V6 Engine Priston",
     "des": "Minim adipisicing sit eu reprehenderit esse amet dolor veniam commodo non ad."
   },
   {
     "_id": "6289510ca9cc6c325944d253",
-    "price": "$3,170.55",
+    "price": 500,
     "img": "https://i.ibb.co/KzjQPpy/6-300x300.jpg",
-    "mquantity": 38,
-    "aquantity": 31,
-    "name": "Shelton Lang",
+    "mquantity": 300,
+    "aquantity": 1000,
+    "name": "Brandix Headlight X3",
     "des": "Sunt ut dolor commodo quis enim. Minim et adipisicing id occaecat duis non mollit"
   }
 ]

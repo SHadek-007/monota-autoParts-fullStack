@@ -9,6 +9,7 @@ import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import RequireAuth from './Pages/Login/RequireAuth';
 import SignUp from './Pages/Login/SignUp';
+import PurchageDetails from './Pages/Purchage/PurchageDetails';
 import Footer from './Pages/Shared/Footer';
 import Header from './Pages/Shared/Header';
 import NotFound from './Pages/Shared/NotFound';
@@ -19,6 +20,7 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/purchage/:productId' element={<RequireAuth><PurchageDetails></PurchageDetails></RequireAuth>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<MyProfile></MyProfile>}></Route>
