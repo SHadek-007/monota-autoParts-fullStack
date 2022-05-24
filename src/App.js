@@ -15,6 +15,7 @@ import Header from './Pages/Shared/Header';
 import NotFound from './Pages/Shared/NotFound';
 import { ToastContainer } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import Payment from './Pages/Dashboard/Payment';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route path='profile' element={<MyProfile></MyProfile>}></Route>
           <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='review' element={<AddReview></AddReview>}></Route>
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>

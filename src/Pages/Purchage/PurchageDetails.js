@@ -14,7 +14,7 @@ const PurchageDetails = () => {
     fetch(`http://localhost:5000/product/${productId}`)
       .then((res) => res.json())
       .then((data) => setProductDetail(data));
-  }, [productDetail]);
+  }, []);
 
   const increaseProduct = () =>{
     const url = `http://localhost:5000/product/increase/${productDetail._id}`;
