@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const MyOrders = () => {
@@ -13,7 +14,12 @@ const MyOrders = () => {
             .then(res => res.json())
             .then(data => setOrders(data))
         }
-    },[user])
+    },[user]);
+
+    const handleDelete = () =>{
+     
+    }
+
     return (
         <div>
       <h2 className="ml-5 text-xl text-accent mb-6">
@@ -41,6 +47,9 @@ const MyOrders = () => {
                 <td>{order.quantity}</td>
                 <td>
                   {(order.price && ! order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className="btn btn-xs btn-success">Pay</button></Link>}
+                  {(order.price && ! order.paid) && 
+                    <label onClick={()=> handleDelete ()} htmlFor="delete-confirm-modal" className="btn btn-xs btn-error ml-5">Cancel</label>
+                    }
                   {(order.price && order.paid) && <div>
                     <p><span className="text-success">Paid</span></p>
                     <p>Transaction Id: <span className="text-success">{order.transactionId}</span></p>

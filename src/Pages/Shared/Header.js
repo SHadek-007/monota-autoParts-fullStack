@@ -22,7 +22,7 @@ const Header = () => {
         <Link to={"/appointment"}>Order</Link>
       </li>
       <li className='text-balck hover:text-secondary hover:font-bold hover:border border-secondary rounded-lg'>
-        <Link to={"/reviews"}>Reviews</Link>
+        <Link to={"/review"}>Reviews</Link>
       </li>
       <li className='text-balck hover:text-secondary hover:font-bold hover:border border-secondary rounded-lg'>
         <Link to={"/blogs"}>Blogs</Link>

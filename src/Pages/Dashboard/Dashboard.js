@@ -3,10 +3,11 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
 import auth from '../../firebase.init';
 import logo from '../../assets/angle-left.png';
+import useAdmin from '../../hooks/useAdmin';
 
 const Dashboard = () => {
     const [user] = useAuthState(auth);
-
+    const [admin] = useAdmin(user);
     return (
         <div className="drawer drawer-mobile px-5 lg:px-12">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -32,19 +33,25 @@ const Dashboard = () => {
           <li className="border mb-4 rounded-lg">
             <Link to={'/dashboard/review'}>Add Review</Link>
           </li>
-          {/* {admin && 
+          {/* <li className="border mb-4 rounded-lg">
+            <Link to={'/dashboard/users'}>Make Admin</Link>
+          </li> */}
+          {admin && 
           <>
             <li className="border mb-4 rounded-lg">
-            <Link to={'/dashboard/users'}>All Users</Link>
-          </li>
-           <li className="border mb-4 rounded-lg">
-            <Link to={'/dashboard/addDoctor'}>Add Doctor</Link>
+            <Link to={'/dashboard/manageOrder'}>Manage All Order</Link>
           </li>
           <li className="border mb-4 rounded-lg">
-            <Link to={'/dashboard/manageDoctors'}>Manage Doctors</Link>
+            <Link to={'/dashboard/users'}>Make Admin</Link>
+          </li>
+           <li className="border mb-4 rounded-lg">
+            <Link to={'/dashboard/addProduct'}>Add Product</Link>
+          </li>
+          <li className="border mb-4 rounded-lg">
+            <Link to={'/dashboard/manageProducts'}>Manage Products</Link>
           </li>
           </>
-          } */}
+          }
         </ul>
       </div>
     </div>
