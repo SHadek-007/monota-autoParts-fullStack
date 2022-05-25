@@ -19,7 +19,7 @@ const Header = () => {
         <Link to={"/"}>Home</Link>
       </li>
       <li className='text-balck hover:text-secondary hover:font-bold hover:border border-secondary rounded-lg'>
-        <Link to={"/appointment"}>Order</Link>
+        <Link to={"/myProfile"}>My Profile</Link>
       </li>
       <li className='text-balck hover:text-secondary hover:font-bold hover:border border-secondary rounded-lg'>
         <Link to={"/review"}>Reviews</Link>
