@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import useProducts from '../../../hooks/useProducts';
 import SingleParts from './SingleParts';
 
 const Parts = () => {
-    const [parts, setParts] = useState([]);
-    useEffect(()=>{
-        fetch("http://localhost:5000/product")
-        .then(res=>res.json())
-        .then(data=>setParts(data))
-    },[])
+    const [parts, setParts] = useProducts();
+    
     return (
         <div>
             <h2 className="text-4xl md:text-5xl text-center font-semibold mt-16 mb-5 hover:text-secondary">Recent Products</h2>
