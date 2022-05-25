@@ -36,7 +36,7 @@ function App() {
           <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='review' element={<AddReview></AddReview>}></Route>
           <Route path='manageOrder' element={<RequirAdmin><ManageAllOrders></ManageAllOrders></RequirAdmin>}></Route>
-          <Route path='users' element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route path='users' element={<RequirAdmin><MakeAdmin></MakeAdmin></RequirAdmin>}></Route>
           <Route path='addProduct' element={<RequirAdmin><AddProduct></AddProduct></RequirAdmin>}></Route>
           <Route path='manageProducts' element={<RequirAdmin><ManageProducts></ManageProducts></RequirAdmin>}></Route>
         </Route>
