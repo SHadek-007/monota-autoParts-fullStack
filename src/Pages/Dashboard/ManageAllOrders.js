@@ -98,11 +98,11 @@ const ManageAllOrders = () => {
                               <h3 className="font-bold text-lg text-red-600">
                                 Are You Sure Want to Delete ?
                               </h3>
-                              <p className="py-4 text-2xl">{order.orderName}</p>
+                              <p className="py-4 text-2xl">{deletingOrder.orderName}</p>
                               <div className="modal-action">
                                 <label
                                   htmlFor="delete-confirm-modal"
-                                  onClick={() => handleDelete(order._id)}
+                                  onClick={() => handleDelete(deletingOrder._id)}
                                   className="btn btn-xs btn-error"
                                 >
                                   Delete

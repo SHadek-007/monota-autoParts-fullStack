@@ -27,7 +27,7 @@ const Dashboard = () => {
           <li className="border mb-4 rounded-lg">
             <Link to={'/dashboard/profile'}>My Profile</Link>
           </li>
-          {admin &&
+          {!admin &&
             <>
               <li className="border mb-4 rounded-lg">
             <Link to={'/dashboard'}>My Orders</Link>

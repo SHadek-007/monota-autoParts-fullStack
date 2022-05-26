@@ -44,7 +44,6 @@ const MyOrders = () => {
       </div>
     );
   }
-
   return (
     <div>
       <h2 className="ml-5 text-xl text-accent mb-6">
@@ -65,7 +64,9 @@ const MyOrders = () => {
           </thead>
           <tbody className="border">
             {orders.map((order, index) => (
+              
               <tr key={order._id}>
+                
                 <th>{index + 1}</th>
                 <td>{order.orderUserName}</td>
                 <td>{order.orderName}</td>
@@ -80,15 +81,16 @@ const MyOrders = () => {
                   {order.price && !order.paid && (
                     <>
                       <label
-                        onClick={() => setDeletingOrder(true)}
+                        onClick={() => setDeletingOrder(order)}
                         htmlFor="delete-confirm-modal"
                         className="btn btn-xs btn-error ml-5"
                       >
                         Cancel
                       </label>
-
+                    
                       {deletingOrder && (
                         <>
+                        
                           <input
                             type="checkbox"
                             id="delete-confirm-modal"
@@ -97,13 +99,13 @@ const MyOrders = () => {
                           <div className="modal modal-bottom sm:modal-middle">
                             <div className="modal-box">
                               <h3 className="font-bold text-lg text-red-600">
-                                Are You Sure Want to Delete ?
+                                Are You Sure Want to Delete?
                               </h3>
-                              <p className="py-4 text-2xl">{order.orderName}</p>
+                              <p className="py-4 text-2xl">{deletingOrder.orderName}</p>
                               <div className="modal-action">
                                 <label
                                   htmlFor="delete-confirm-modal"
-                                  onClick={() => handleDelete(order._id)}
+                                  onClick={() => handleDelete(deletingOrder._id)}
                                   className="btn btn-xs btn-error"
                                 >
                                   Delete
