@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SingleParts = ({singleParts}) => {
     const {_id, name, img, price, mquantity, aquantity, des} = singleParts;

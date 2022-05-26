@@ -27,15 +27,17 @@ const Dashboard = () => {
           <li className="border mb-4 rounded-lg">
             <Link to={'/dashboard/profile'}>My Profile</Link>
           </li>
-          <li className="border mb-4 rounded-lg">
+          {admin &&
+            <>
+              <li className="border mb-4 rounded-lg">
             <Link to={'/dashboard'}>My Orders</Link>
           </li>
           <li className="border mb-4 rounded-lg">
             <Link to={'/dashboard/review'}>Add Review</Link>
           </li>
-          {/* <li className="border mb-4 rounded-lg">
-            <Link to={'/dashboard/users'}>Make Admin</Link>
-          </li> */}
+            </>
+          }
+          
           {admin && 
           <>
             <li className="border mb-4 rounded-lg">

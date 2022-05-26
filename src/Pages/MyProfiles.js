@@ -48,7 +48,7 @@ const MyProfiles = () => {
               <div className="grid grid-cols-1 gap-3">
                 <span className="block my-1 font-bold  ">HTML</span>
                 <progress
-                  class="progress progress-success w-56"
+                  className="progress progress-success w-56"
                   value="90"
                   max="100"
                 ></progress>
@@ -56,25 +56,25 @@ const MyProfiles = () => {
                   CSS
                 </span>
                 <progress
-                  class="progress progress-success w-56"
+                  className="progress progress-success w-56"
                   value="85"
                   max="100"
                 ></progress>
                 <span className="block  my-1 font-bold  ">JAVASCRIPT</span>
                 <progress
-                  class="progress progress-success w-56"
+                  className="progress progress-success w-56"
                   value="70"
                   max="100"
                 ></progress>
                 <span className="block  my-1 font-bold  ">React</span>
                 <progress
-                  class="progress progress-success w-56"
+                  className="progress progress-success w-56"
                   value="75"
                   max="100"
                 ></progress>
                 <span className="block  my-1 font-bold  ">Node</span>
                 <progress
-                  class="progress progress-success w-56"
+                  className="progress progress-success w-56"
                   value="60"
                   max="100"
                 ></progress>
@@ -88,64 +88,64 @@ const MyProfiles = () => {
           My Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 px-5 lg:px-12 mb-10">
-          <div class="card max-w-lg bg-base-100 shadow-xl">
+          <div className="card max-w-lg bg-base-100 shadow-xl">
             <figure>
               <img className=""
                 src={photo1}
                 alt="Shoes"
               />
             </figure>
-            <div class="card-body">
-              <h2 class="card-title">
+            <div className="card-body">
+              <h2 className="card-title">
                 DentiCare
-                <div class="badge badge-secondary">NEW</div>
+                <div className="badge badge-secondary">NEW</div>
               </h2>
               <p>Denticare is Dentist Website</p>
-              <div class="card-actions justify-end">
-                <div class="badge badge-outline">Doctor</div>
-                <div class="badge badge-outline">Clinic</div>
+              <div className="card-actions justify-end">
+                <div className="badge badge-outline">Doctor</div>
+                <div className="badge badge-outline">Clinic</div>
               </div>
               <button className="btn btn-success"><a href="https://react-denticare.web.app/" target={'_blank'}>Visit Site</a></button>
             </div>
           </div>
 
-          <div class="card max-w-lg bg-base-100 shadow-xl">
+          <div className="card max-w-lg bg-base-100 shadow-xl">
             <figure>
               <img className=""
                 src={photo2}
                 alt="Shoes"
               />
             </figure>
-            <div class="card-body">
-              <h2 class="card-title">
+            <div className="card-body">
+              <h2 className="card-title">
                 Car Manager
-                <div class="badge badge-secondary">NEW</div>
+                <div className="badge badge-secondary">NEW</div>
               </h2>
               <p>Car Manager is Warehouse Related Website</p>
-              <div class="card-actions justify-end">
-                <div class="badge badge-outline">Warehouse</div>
-                <div class="badge badge-outline">FullStack</div>
+              <div className="card-actions justify-end">
+                <div className="badge badge-outline">Warehouse</div>
+                <div className="badge badge-outline">FullStack</div>
               </div>
               <button className="btn btn-success"><a href="https://car-manager-client.web.app/" target={'_blank'}>Visit Site</a></button>
             </div>
           </div>
 
-          <div class="card max-w-lg bg-base-100 shadow-xl">
+          <div className="card max-w-lg bg-base-100 shadow-xl">
             <figure>
               <img className=""
                 src={photo3}
                 alt="Shoes"
               />
             </figure>
-            <div class="card-body">
-              <h2 class="card-title">
+            <div className="card-body">
+              <h2 className="card-title">
                 Monota Auto Parts
-                <div class="badge badge-secondary">NEW</div>
+                <div className="badge badge-secondary">NEW</div>
               </h2>
               <p>Monota Auto Parts is Manufactur Related Website</p>
-              <div class="card-actions justify-end">
-                <div class="badge badge-outline">Manufactur</div>
-                <div class="badge badge-outline">FullStack</div>
+              <div className="card-actions justify-end">
+                <div className="badge badge-outline">Manufactur</div>
+                <div className="badge badge-outline">FullStack</div>
               </div>
             </div>
           </div>

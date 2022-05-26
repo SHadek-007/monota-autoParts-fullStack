@@ -31,7 +31,7 @@ const Home = () => {
                 <h2 className='text-2xl text-center font-semibold'>Reviews</h2>
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5'>
                 {
-                    reviewList.map(review => <Reviews key={review.key} review={review}></Reviews>)
+                    reviewList.map(review => <Reviews key={review._id} review={review}></Reviews>)
                 }
             </div>
             </div>

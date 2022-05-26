@@ -19,7 +19,6 @@ const AddReview = () => {
     const handleReview = (e) =>{
         e.preventDefault()
         const review = {rating, description , user:user.displayName}
-        console.log(review);
         fetch("http://localhost:5000/review", {
       method: "POST",
       headers: {
@@ -29,12 +28,11 @@ const AddReview = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         toast.success('Successfully Added Your Review')
+        e.target.reset()
       });
     }
-
-    
+   
     return (
         <div className='mt-5 '>
             <form onSubmit={handleReview} className="grid grid-cols-1 justify-items-center gap-5 border border-secondary max-w-lg mx-auto rounded-xl p-10">

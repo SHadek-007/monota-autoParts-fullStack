@@ -3,8 +3,8 @@ import image from '../../assets/at_auto.webp';
 
 const OurBenifits = () => {
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-5 my-12 shadow-lg rounded-lg'>
-            <div className=''>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-5 my-12 shadow-lg rounded-lg py-8'>
+            <div className='flex items-center'>
                 <img className='max-h-sm lg:h-96 rounded-lg' src={image} alt="" />
             </div>
             <div className='px-3 md:px-0 lg:px-0'>
@@ -24,7 +24,7 @@ const OurBenifits = () => {
                     <input type="checkbox" checked="checked" className="checkbox" readOnly/>
                     <p className='ml-3'><small>Delivery of goods all over the world</small></p>
                 </div>
-                <button className="btn btn-sm btn-primary mt-3">Apply Now &raquo;</button>
+                <button className="btn  btn-accent text-primary mt-3">Apply Now &raquo;</button>
             </div>
                 </div>
         </div>

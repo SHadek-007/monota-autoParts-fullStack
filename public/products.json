@@ -1,7 +1,7 @@
 [
   {
-    "_id": "6289510c724f65d6298adcae",
-    "price": 300,
+    
+    "price": "300",
     "img": "https://i.ibb.co/yV6w2M5/1-300x300.jpg",
     "mquantity": 300,
     "aquantity": 1000,
@@ -9,48 +9,48 @@
     "des": "​It seems like yesterday that you were driving away from the dealership in your brand new Audi A3. A car that we are sure gives you great satisfaction. That much is clear from the miles you've driven since the first time you placed your hands on its steering wheel. So many that it is now time to replace the discs and pads so you can return the braking system to full efficiency."
   },
   {
-    "_id": "6289510cb39a54ccba51690b",
+    
     "price": 700,
     "img": "https://i.ibb.co/Vmm0zQ1/2-300x300.jpg",
-    "mquantity": 300,
+    "mquantity": "300",
     "aquantity": 1000,
     "name": "Glossy Aluminium Fan",
-    "des": "Dolor et ullamco sint aliqua eu labore elit aliquip magna exercitation."
+    "des": "online shopping is expanding in every year and at recent years it has carried out a great pace. Jamuna Electronics and Automobiles Ltd as one of the largest manufacturer and retailer of electronics and automobiles products have taken that into consideration. From this perspective estorejamuna.com is revolutionizing the online shopping in Bangladesh."
   },
   {
-    "_id": "6289510c64c67a7faf36895d",
-    "price": 400,
+    
+    "price": 310,
     "img": "https://i.ibb.co/RpMfJN8/3-300x300.jpg",
-    "mquantity": 300,
+    "mquantity": "300",
     "aquantity": 1000,
     "name": "Steering Wheel Latex",
-    "des": "Non ullamco nulla nisi esse consectetur esse. Dolore sit nulla labore cillum officia"
+    "des": "The MOMO MOD. 30 racing steering wheel is ideal for Sedan and GT car drivers looking for maximum control. The anatomic design features black anodized spokes and thumb rests to better fit a driver’s grip preference. The MOD. 30's flat bottom design makes entering and exiting a vehicles cockpit easier while increasing leg clearance especially for when quicker steering is required instead of full rotation of the wheel."
   },
   {
-    "_id": "6289510cfd0e46f05dc20254",
+    
     "price": 250,
     "img": "https://i.ibb.co/ZYfJ911/4-300x300.jpg",
-    "mquantity": 300,
+    "mquantity": "300",
     "aquantity": 1000,
     "name": "Cocker Tire Strong",
-    "des": "Minim Lorem ad officia ullamco esse exercitation commodo ipsum in incididunt ea."
+    "des": "Coker Tire Company saw the need for an event like this and organizes and promotes it to give back to the local automotive community. However, the event’s reach goes far beyond the local car scene. Enthusiasts travel from hundreds of miles away to take part in this one-day event, which is free for participants and spectators alike, giving everyone a chance to "
   },
   {
-    "_id": "6289510c759a76df1497e301",
+    
     "price": 2000,
     "img": "https://i.ibb.co/xJs0NKK/5-300x300.jpg",
-    "mquantity": 300,
+    "mquantity": "300",
     "aquantity": 1000,
     "name": "V6 Engine Priston",
-    "des": "Minim adipisicing sit eu reprehenderit esse amet dolor veniam commodo non ad."
+    "des": "Despite a projected price tag beyond $450,000, the MC20 Cielo is also the first MC20 variant with autonomous emergency braking – a feature that will become mandatory on all-new models in Australia next year, and is standard on $16,000 Kia Picanto micro cars and $30,000 Isuzu D-Max utes."
   },
   {
-    "_id": "6289510ca9cc6c325944d253",
+    
     "price": 500,
     "img": "https://i.ibb.co/KzjQPpy/6-300x300.jpg",
-    "mquantity": 300,
+    "mquantity": "300",
     "aquantity": 1000,
-    "name": "Brandix Headlight X3",
-    "des": "Sunt ut dolor commodo quis enim. Minim et adipisicing id occaecat duis non mollit"
+    "name": "BMW Headlight X3",
+    "des": "Halogen lights are the basic, entry-level type of lighting technology you’ll find in most cars. It basically relies on an incandescent bulb filled with halogen gas that increases the light intensity and output of the projector."
   }
 ]

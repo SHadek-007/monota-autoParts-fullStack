@@ -42,18 +42,19 @@ const AddProduct = () => {
             .then((res) => res.json())
             .then((data) => {
              toast.success("Add Product Successfully");
+             e.target.reset()
             });
     }
     
     return (
         <div className='mt-5 '>
             <form onSubmit={handleAddProduct} className="grid grid-cols-1 justify-items-center gap-5 border border-secondary max-w-lg mx-auto rounded-xl p-10">
-            <input onBlur={handleName} type="text" name="name" className='border py-2 pl-4 rounded-lg outline-0 w-full max-w-md' placeholder='Product Name ' />
-            <input onBlur={handlePrice} type="number" name="price" className='border py-2 pl-4 rounded-lg outline-0 w-full max-w-md' placeholder='Price ' />
-            <input onBlur={handleAQuantity} type="number" name="aquantity" className='border py-2 pl-4 rounded-lg outline-0 w-full max-w-md' placeholder="Available Quantity 1000"/>
-            <input onBlur={handleMQuantity} type="number" name="mquantity" className='border py-2 pl-4 rounded-lg outline-0 w-full max-w-md' placeholder='Minimum Quantity 300' />
-            <input onBlur={handleImg} type="text" name=" img" className='border py-2 pl-4 rounded-lg outline-0 w-full max-w-md' placeholder=' img URL' />
-            <textarea onBlur={handleDes} type="text" name=" des" className='border py-2 pl-4 rounded-lg outline-0 w-full max-w-md' placeholder=' des' />
+            <input onBlur={handleName} type="text" name="name" className='border py-2 pl-4 rounded-lg outline-0 w-full max-w-md' placeholder='Product Name ' required/>
+            <input onBlur={handlePrice} type="number" name="price" className='border py-2 pl-4 rounded-lg outline-0 w-full max-w-md' placeholder='Price ' required/>
+            <input onChange={handleAQuantity} type="number" name="aquantity" className='border py-2 pl-4 rounded-lg outline-0 w-full max-w-md' placeholder="Available Quantity 1000" required/>
+            <input onBlur={handleMQuantity} type="number" name="mquantity" className='border py-2 pl-4 rounded-lg outline-0 w-full max-w-md' placeholder='Minimum Quantity 300' required/>
+            <input onBlur={handleImg} type="text" name=" img" className='border py-2 pl-4 rounded-lg outline-0 w-full max-w-md' placeholder=' img URL' required/>
+            <textarea onBlur={handleDes} type="text" name=" des" className='border py-2 pl-4 rounded-lg outline-0 w-full max-w-md' placeholder=' des' required/>
             <input className='btn btn-secondary' type="submit" value="Add Product" />
             </form>
         </div>

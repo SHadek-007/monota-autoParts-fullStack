@@ -22,14 +22,8 @@ const Header = () => {
         <Link to={"/myProfile"}>My Profile</Link>
       </li>
       <li className='text-balck hover:text-secondary hover:font-bold hover:border border-secondary rounded-lg'>
-        <Link to={"/review"}>Reviews</Link>
-      </li>
-      <li className='text-balck hover:text-secondary hover:font-bold hover:border border-secondary rounded-lg'>
         <Link to={"/blogs"}>Blogs</Link>
       </li>
-      <li className='text-balck hover:text-secondary hover:font-bold hover:border border-secondary rounded-lg'>
-        <Link to={"/about"}>About</Link>
-      </li >
       {
         user && <li className='text-balck hover:text-secondary hover:font-bold hover:border border-secondary rounded-lg'>
         <Link to={"/dashboard"}>Dashboard</Link>
