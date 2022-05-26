@@ -11,13 +11,13 @@ const PurchageDetails = () => {
   const [customError, setCustomError] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${productId}`)
+    fetch(`https://infinite-journey-21489.herokuapp.com/product/${productId}`)
       .then((res) => res.json())
       .then((data) => setProductDetail(data));
   }, []);
 
   const handleChangeQuantity = (event) => {
-    setCustomError('');
+    setCustomError("");
     const value = event.target.value;
     const mq = parseInt(productDetail.mquantity);
     const aq = parseInt(productDetail.aquantity);
@@ -26,7 +26,7 @@ const PurchageDetails = () => {
       setCustomError("error");
     }
   };
-  
+
   const handleOrder = (e) => {
     e.preventDefault();
     const placeOrder = {
@@ -39,7 +39,7 @@ const PurchageDetails = () => {
       phone: e.target.phone.value,
       address: e.target.address.value,
     };
-    fetch("http://localhost:5000/order", {
+    fetch("https://infinite-journey-21489.herokuapp.com/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -83,7 +83,7 @@ const PurchageDetails = () => {
               <small>{productDetail.des}</small>
             </p>
           </div>
-          
+
           <div className="mt-7 mx-auto">
             <h2 className="text-3xl font-semibold text-center mb-2">
               Place Your Order
@@ -106,15 +106,27 @@ const PurchageDetails = () => {
                 required
                 className="mb-4 input input-bordered w-full max-w-xl"
               />
-              {
-                customError && <div className="alert alert-error shadow-lg mt-2 mb-3">
-                <div>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                  <span>Please a Valid Quantity.</span>
+              {customError && (
+                <div className="alert alert-error shadow-lg mt-2 mb-3">
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="stroke-current flex-shrink-0 h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span>Please a Valid Quantity.</span>
+                  </div>
                 </div>
-              </div>
-              }
-              
+              )}
+
               <input
                 type="text"
                 disabled

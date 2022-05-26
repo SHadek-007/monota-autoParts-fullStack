@@ -5,20 +5,20 @@ import useProducts from "../../hooks/useProducts";
 const ManageProducts = () => {
   const [parts, setParts] = useProducts();
 
-  const handleDelete = (id) =>{
-    const url = `http://localhost:5000/product/${id}`;
+  const handleDelete = (id) => {
+    const url = `https://infinite-journey-21489.herokuapp.com/product/${id}`;
     fetch(url, {
       method: "DELETE",
     })
-    .then((res) => res.json())
-    .then((data) => {
+      .then((res) => res.json())
+      .then((data) => {
         if (data.deletedCount > 0) {
           const remainig = parts.filter((product) => product._id !== id);
           setParts(remainig);
         }
-    });
-        toast.success("Delete Product Successfully");
-  }
+      });
+    toast.success("Delete Product Successfully");
+  };
 
   return (
     <div>
@@ -44,7 +44,12 @@ const ManageProducts = () => {
                 <td>$ {product.price}</td>
                 <td>{product.aquantity}</td>
                 <td>
-                    <button className="btn btn-xs btn-error" onClick={() => handleDelete(product._id)}>Delete</button>
+                  <button
+                    className="btn btn-xs btn-error"
+                    onClick={() => handleDelete(product._id)}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}

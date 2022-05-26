@@ -1,45 +1,51 @@
-import React, { useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useQuery } from 'react-query';
-import { toast } from 'react-toastify';
-import auth from '../../firebase.init';
+import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
+import { toast } from "react-toastify";
+import auth from "../../firebase.init";
 
 const ManageAllOrders = () => {
-    const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
-    const [deletingOrder, setDeletingOrder] = useState(false);
+  const [deletingOrder, setDeletingOrder] = useState(false);
 
-  const { data: orders, isLoading, refetch } = useQuery("orders", () =>
-    fetch(`http://localhost:5000/all-order`)
+  const {
+    data: orders,
+    isLoading,
+    refetch,
+  } = useQuery("orders", () =>
+    fetch(`https://infinite-journey-21489.herokuapp.com/all-order`)
       .then((res) => res.json())
       .then((data) => data)
   );
 
-    const handleDelete = (id) =>{
-      fetch(`http://localhost:5000/order/${id}`, {
-        method: "DELETE",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount > 0) {
-            toast.success(`Order is Deleted Successfully.`);
-            setDeletingOrder(false);
-            refetch();
-          }
-        });
-    }
+  const handleDelete = (id) => {
+    fetch(`https://infinite-journey-21489.herokuapp.com/order/${id}`, {
+      method: "DELETE",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          toast.success(`Order is Deleted Successfully.`);
+          setDeletingOrder(false);
+          refetch();
+        }
+      });
+  };
 
-    if(isLoading){
-        return <div className="flex items-center justify-center ">
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center ">
         <div className="w-16 h-16 border-b-2 border-gray-900 rounded-full animate-spin"></div>
       </div>
-      };
-    
-    return (
-        <div>
+    );
+  }
+
+  return (
+    <div>
       <h2 className="ml-5 text-xl text-accent mb-6">
         All Orders: {orders.length}
       </h2>
@@ -67,7 +73,9 @@ const ManageAllOrders = () => {
                 <td>$ {order.price}</td>
                 <td>{order.quantity}</td>
                 <td>
-                  {(order.price &&  !order.paid) && <button className="btn btn-xs btn-primary">Unpaid</button>}
+                  {order.price && !order.paid && (
+                    <button className="btn btn-xs btn-primary">Unpaid</button>
+                  )}
                   {order.price && !order.paid && (
                     <>
                       <label
@@ -90,9 +98,7 @@ const ManageAllOrders = () => {
                               <h3 className="font-bold text-lg text-red-600">
                                 Are You Sure Want to Delete ?
                               </h3>
-                              <p className="py-4 text-2xl">
-                              {order.orderName}
-                              </p>
+                              <p className="py-4 text-2xl">{order.orderName}</p>
                               <div className="modal-action">
                                 <label
                                   htmlFor="delete-confirm-modal"
@@ -114,14 +120,19 @@ const ManageAllOrders = () => {
                       )}
                     </>
                   )}
-                  {(order.price && order.paid) && <button className='btn btn-success btn-xs'>Paid</button>}
+                  {order.price && order.paid && (
+                    <button className="btn btn-success btn-xs">Paid</button>
+                  )}
                 </td>
                 <td>
-                    {
-                        (order.price && !order.paid) && <button className='btn btn-secondary btn-xs'>Pending</button>
-
-                    }
-                    {(order.price && order.paid) && <button className='btn btn-success btn-xs'>Shipped</button>}
+                  {order.price && !order.paid && (
+                    <button className="btn btn-secondary btn-xs">
+                      Pending
+                    </button>
+                  )}
+                  {order.price && order.paid && (
+                    <button className="btn btn-success btn-xs">Shipped</button>
+                  )}
                 </td>
               </tr>
             ))}
@@ -129,7 +140,7 @@ const ManageAllOrders = () => {
         </table>
       </div>
     </div>
-    );
+  );
 };
 
 export default ManageAllOrders;

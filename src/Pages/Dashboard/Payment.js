@@ -1,17 +1,17 @@
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-import React from 'react';
-import { useQuery } from 'react-query';
-import { useParams } from 'react-router-dom';
-import CheckoutForm from './CheckoutForm';
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import React from "react";
+import { useQuery } from "react-query";
+import { useParams } from "react-router-dom";
+import CheckoutForm from "./CheckoutForm";
 
 const stripePromise = loadStripe(
-    "pk_test_51L0jLpJT2qOgY8r1T3qwZ8VDyTnfQkFlrPuRLgh7oYFq3devOQWQuvqMJJ8rMEfvHYU2DeWZalDm9HLTV13Fciqd00tT2FluyV"
-  );
+  "pk_test_51L0jLpJT2qOgY8r1T3qwZ8VDyTnfQkFlrPuRLgh7oYFq3devOQWQuvqMJJ8rMEfvHYU2DeWZalDm9HLTV13Fciqd00tT2FluyV"
+);
 
 const Payment = () => {
-    const {id} = useParams();
-    const url = `http://localhost:5000/order/${id}`;
+  const { id } = useParams();
+  const url = `https://infinite-journey-21489.herokuapp.com/order/${id}`;
   const { data: order, isLoading } = useQuery(["order", id], () =>
     fetch(url, {
       method: "GET",
@@ -28,8 +28,8 @@ const Payment = () => {
     );
   }
 
-    return (
-        <div>
+  return (
+    <div>
       <div className="card w-50 max-w-md bg-base-100 shadow-xl my-12">
         <div className="card-body">
           <h4 className="text-secondary font-semibold">
@@ -47,7 +47,7 @@ const Payment = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default Payment;

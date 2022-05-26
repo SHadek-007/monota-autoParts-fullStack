@@ -9,14 +9,20 @@ const MyOrders = () => {
   const [user] = useAuthState(auth);
   const [deletingOrder, setDeletingOrder] = useState(false);
 
-  const { data: orders, isLoading, refetch } = useQuery("orders", () =>
-    fetch(`http://localhost:5000/order?orderUser=${user.email}`)
+  const {
+    data: orders,
+    isLoading,
+    refetch,
+  } = useQuery("orders", () =>
+    fetch(
+      `https://infinite-journey-21489.herokuapp.com/order?orderUser=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => data)
   );
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/order/${id}`, {
+    fetch(`https://infinite-journey-21489.herokuapp.com/order/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -31,10 +37,12 @@ const MyOrders = () => {
         }
       });
   };
-  if(isLoading){
-    return <div className="flex items-center justify-center ">
-    <div className="w-16 h-16 border-b-2 border-gray-900 rounded-full animate-spin"></div>
-  </div>
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center ">
+        <div className="w-16 h-16 border-b-2 border-gray-900 rounded-full animate-spin"></div>
+      </div>
+    );
   }
 
   return (
@@ -42,11 +50,7 @@ const MyOrders = () => {
       <h2 className="ml-5 text-xl text-accent mb-6">
         My Orders: {orders.length}
       </h2>
-      {orders.length <= 0 && (
-        <div className="flex items-center justify-center ">
-          <div className="w-16 h-16 border-b-2 border-gray-900 rounded-full animate-spin"></div>
-        </div>
-      )}
+      
       <div className="overflow-x-auto ml-5">
         <table className="table w-full">
           <thead>
@@ -69,8 +73,7 @@ const MyOrders = () => {
                 <td>{order.quantity}</td>
                 <td>
                   {order.price && !order.paid && (
-                    <Link to={`/dashboard/payment/${order._id
-                    }`}>
+                    <Link to={`/dashboard/payment/${order._id}`}>
                       <button className="btn btn-xs btn-success">Pay</button>
                     </Link>
                   )}
@@ -96,9 +99,7 @@ const MyOrders = () => {
                               <h3 className="font-bold text-lg text-red-600">
                                 Are You Sure Want to Delete ?
                               </h3>
-                              <p className="py-4 text-2xl">
-                              {order.orderName}
-                              </p>
+                              <p className="py-4 text-2xl">{order.orderName}</p>
                               <div className="modal-action">
                                 <label
                                   htmlFor="delete-confirm-modal"
