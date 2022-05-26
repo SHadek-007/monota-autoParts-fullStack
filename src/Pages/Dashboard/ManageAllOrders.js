@@ -79,7 +79,7 @@ const ManageAllOrders = () => {
                   {order.price && !order.paid && (
                     <>
                       <label
-                        onClick={() => setDeletingOrder(true)}
+                        onClick={() => setDeletingOrder(order)}
                         htmlFor="delete-confirm-modal"
                         className="btn btn-xs btn-error ml-5"
                       >
