@@ -11,7 +11,7 @@ const PurchageDetails = () => {
   const [customError, setCustomError] = useState("");
 
   useEffect(() => {
-    fetch(`https://infinite-journey-21489.herokuapp.com/product/${productId}`)
+    fetch(`http://localhost:5000/product/${productId}`)
       .then((res) => res.json())
       .then((data) => setProductDetail(data));
   }, []);
@@ -39,7 +39,7 @@ const PurchageDetails = () => {
       phone: e.target.phone.value,
       address: e.target.address.value,
     };
-    fetch("https://infinite-journey-21489.herokuapp.com/order", {
+    fetch("http://localhost:5000/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",

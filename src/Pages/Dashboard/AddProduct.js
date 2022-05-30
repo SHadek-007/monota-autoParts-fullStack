@@ -31,7 +31,7 @@ const AddProduct = () => {
   const handleAddProduct = (e) => {
     e.preventDefault();
     const product = { name, price, aquantity, mquantity, img, des };
-    fetch("https://infinite-journey-21489.herokuapp.com/product", {
+    fetch("http://localhost:5000/product", {
       method: "POST",
       headers: {
         "content-type": "application/json",

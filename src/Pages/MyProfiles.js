@@ -147,6 +147,7 @@ const MyProfiles = () => {
                 <div className="badge badge-outline">Manufactur</div>
                 <div className="badge badge-outline">FullStack</div>
               </div>
+              <button className="btn btn-success"><a href="https://monota-auto-parts.web.app/" target={'_blank'}>Visit Site</a></button>
             </div>
           </div>
         </div>

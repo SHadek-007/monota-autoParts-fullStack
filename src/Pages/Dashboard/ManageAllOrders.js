@@ -14,13 +14,13 @@ const ManageAllOrders = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () =>
-    fetch(`https://infinite-journey-21489.herokuapp.com/all-order`)
+    fetch(`http://localhost:5000/all-order`)
       .then((res) => res.json())
       .then((data) => data)
   );
 
   const handleDelete = (id) => {
-    fetch(`https://infinite-journey-21489.herokuapp.com/order/${id}`, {
+    fetch(`http://localhost:5000/order/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -98,11 +98,15 @@ const ManageAllOrders = () => {
                               <h3 className="font-bold text-lg text-red-600">
                                 Are You Sure Want to Delete ?
                               </h3>
-                              <p className="py-4 text-2xl">{deletingOrder.orderName}</p>
+                              <p className="py-4 text-2xl">
+                                {deletingOrder.orderName}
+                              </p>
                               <div className="modal-action">
                                 <label
                                   htmlFor="delete-confirm-modal"
-                                  onClick={() => handleDelete(deletingOrder._id)}
+                                  onClick={() =>
+                                    handleDelete(deletingOrder._id)
+                                  }
                                   className="btn btn-xs btn-error"
                                 >
                                   Delete

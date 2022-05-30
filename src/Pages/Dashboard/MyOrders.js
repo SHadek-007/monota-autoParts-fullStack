@@ -14,15 +14,13 @@ const MyOrders = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () =>
-    fetch(
-      `https://infinite-journey-21489.herokuapp.com/order?orderUser=${user.email}`
-    )
+    fetch(`http://localhost:5000/order?orderUser=${user.email}`)
       .then((res) => res.json())
       .then((data) => data)
   );
 
   const handleDelete = (id) => {
-    fetch(`https://infinite-journey-21489.herokuapp.com/order/${id}`, {
+    fetch(`http://localhost:5000/order/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -49,7 +47,7 @@ const MyOrders = () => {
       <h2 className="ml-5 text-xl text-accent mb-6">
         My Orders: {orders.length}
       </h2>
-      
+
       <div className="overflow-x-auto ml-5">
         <table className="table w-full">
           <thead>
@@ -64,9 +62,7 @@ const MyOrders = () => {
           </thead>
           <tbody className="border">
             {orders.map((order, index) => (
-              
               <tr key={order._id}>
-                
                 <th>{index + 1}</th>
                 <td>{order.orderUserName}</td>
                 <td>{order.orderName}</td>
@@ -87,10 +83,9 @@ const MyOrders = () => {
                       >
                         Cancel
                       </label>
-                    
+
                       {deletingOrder && (
                         <>
-                        
                           <input
                             type="checkbox"
                             id="delete-confirm-modal"
@@ -101,11 +96,15 @@ const MyOrders = () => {
                               <h3 className="font-bold text-lg text-red-600">
                                 Are You Sure Want to Delete?
                               </h3>
-                              <p className="py-4 text-2xl">{deletingOrder.orderName}</p>
+                              <p className="py-4 text-2xl">
+                                {deletingOrder.orderName}
+                              </p>
                               <div className="modal-action">
                                 <label
                                   htmlFor="delete-confirm-modal"
-                                  onClick={() => handleDelete(deletingOrder._id)}
+                                  onClick={() =>
+                                    handleDelete(deletingOrder._id)
+                                  }
                                   className="btn btn-xs btn-error"
                                 >
                                   Delete

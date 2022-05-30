@@ -9,7 +9,7 @@ import Summery from "./Summery";
 const Home = () => {
   const [reviewList, setReviewList] = useState([]);
   useEffect(() => {
-    fetch("https://infinite-journey-21489.herokuapp.com/review")
+    fetch("http://localhost:5000/review")
       .then((res) => res.json())
       .then((data) => setReviewList(data));
   }, []);
