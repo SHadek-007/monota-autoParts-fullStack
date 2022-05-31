@@ -14,7 +14,9 @@ const MyProfile = () => {
   };
 
   useEffect(() => {
-    fetch(`  http://localhost:5000/myfrofiledata/${user?.email}`)
+    fetch(
+      `  https://infinite-journey-21489.herokuapp.com/myfrofiledata/${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setUserabout(data[0]));
   }, []);
@@ -29,7 +31,7 @@ const MyProfile = () => {
     const linkedin = e.target.linkedin.value;
     const about = { education, location, phonenumber, linkedin, email };
     // Upload USer All Data
-    fetch(` http://localhost:5000/myprofile/${email}`, {
+    fetch(` https://infinite-journey-21489.herokuapp.com/myprofile/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

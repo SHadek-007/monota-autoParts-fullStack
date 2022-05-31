@@ -12,13 +12,13 @@ const ManageProducts = () => {
     isLoading,
     refetch,
   } = useQuery("product", () =>
-    fetch(`http://localhost:5000/product`)
+    fetch(`https://infinite-journey-21489.herokuapp.com/product`)
       .then((res) => res.json())
       .then((data) => data)
   );
 
   const handleDelete = (id) => {
-    const url = `http://localhost:5000/product/${id}`;
+    const url = `https://infinite-journey-21489.herokuapp.com/product/${id}`;
     fetch(url, {
       method: "DELETE",
     })

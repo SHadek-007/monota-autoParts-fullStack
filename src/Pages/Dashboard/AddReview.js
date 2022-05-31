@@ -18,7 +18,7 @@ const AddReview = () => {
   const handleReview = (e) => {
     e.preventDefault();
     const review = { rating, description, user: user.displayName };
-    fetch("http://localhost:5000/review", {
+    fetch("https://infinite-journey-21489.herokuapp.com/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",

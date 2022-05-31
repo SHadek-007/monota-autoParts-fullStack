@@ -14,13 +14,15 @@ const MyOrders = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () =>
-    fetch(`http://localhost:5000/order?orderUser=${user.email}`)
+    fetch(
+      `https://infinite-journey-21489.herokuapp.com/order?orderUser=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => data)
   );
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/order/${id}`, {
+    fetch(`https://infinite-journey-21489.herokuapp.com/order/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
